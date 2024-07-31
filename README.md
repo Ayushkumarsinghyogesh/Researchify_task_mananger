@@ -27,5 +27,5 @@ A Task Manager application built using React for the frontend and Mongoose (with
 1. **Clone the repository:**
 
    ```bash
-   git clone https://github.com/yourusername/task-manager.git
+   git clone (https://github.com/Ayushkumarsinghyogesh/Researchify_task_mananger).git
    cd task-manager
