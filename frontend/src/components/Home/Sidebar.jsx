@@ -57,7 +57,11 @@ const Sidebar = () => {
           </div>
         ))}
       </div>
-      
+      <div className='mt-4'>
+        <button className='bg-gray-500 w-full p-2 rounded hover:bg-white text-white hover:text-black'>
+          Sign Out
+        </button>
+      </div>
     </div>
   );
 };
