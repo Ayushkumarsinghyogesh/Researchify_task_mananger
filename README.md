@@ -13,7 +13,7 @@ A Task Manager application built using React for the frontend and Mongoose (with
 
 - **Frontend**: React, React Router DOM, Axios
 - **Backend**: Node.js, Express, Mongoose, MongoDB
-- **Deployment**: Netlify (Frontend), Heroku/Render/Other (Backend)
+- **Deployment**: Netlify (Frontend) &  (Backend)
 
 ## Getting Started
 
