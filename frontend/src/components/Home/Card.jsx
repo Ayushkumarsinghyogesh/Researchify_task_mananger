@@ -27,11 +27,12 @@ const Card = ({ home }) => {
 
   return (
     <div className='p-4'>
+      {/* Dropdown for filtering tasks */}
       <div className='mb-4'>
         <select
           value={filter}
           onChange={(e) => setFilter(e.target.value)}
-          className='p-2 rounded border border-gray-300 bg-gray-200'
+          className='p-2 rounded border border-gray-300'
         >
           <option value="All">All tasks</option>
           <option value="Important">Important Task</option>
@@ -39,29 +40,31 @@ const Card = ({ home }) => {
           <option value="In Completed">In Completed Task</option>
         </select>
       </div>
-      <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4'>
+      <div className='grid grid-cols-4 gap-4'>
         {filteredData.map((item, i) => (
-          <div key={i} className='bg-gray-100 border border-gray-300 flex flex-col rounded-md shadow-md'>
-            <div className='p-4'>
-              <h1 className='text-xl font-semibold mb-2'>{item.title}</h1>
-              <p className='text-gray-700'>{item.desc}</p>
+          <div key={i} className='bg-yellow-300 flex flex-col justify-between rounded-sm p-4'>
+            <div className="border border-red-600 rounded-xl p-4 bg-gray-200">
+              <div>
+                <h1 className='text-xl font-semibold'>{item.title}</h1>
+                <p className='text-gray-900 my-2'>{item.desc}</p>
+              </div>
             </div>
-            <div className='flex flex-col items-center justify-between p-4 border-t border-gray-300'>
+            <div className="mt-4 w-full flex flex-col items-center">
               <button
-                className={`py-1 px-3 rounded text-white ${
-                  item.status === 'In Completed' ? 'bg-red-500' : 'bg-green-500'
+                className={`p-2 rounded ${
+                  item.status === 'In Completed' ? 'bg-red-400' : 'bg-green-400'
                 }`}
               >
                 {item.status}
               </button>
-              <div className="mt-4 flex justify-around text-xl text-gray-700">
-                <button className='hover:text-red-500 transition-colors'>
+              <div className="text-white p-2 w-full flex justify-around text-xl">
+                <button className='fav-task hover:scale-50 duration-1000'>
                   <FaHeart />
                 </button>
-                <button className='hover:text-green-500 transition-colors'>
+                <button>
                   <IoCheckmarkDoneCircleSharp />
                 </button>
-                <button className='hover:text-gray-500 transition-colors'>
+                <button>
                   <MdDelete />
                 </button>
               </div>
@@ -69,9 +72,9 @@ const Card = ({ home }) => {
           </div>
         ))}
         {home === 'true' && (
-          <div className='bg-gray-600 flex flex-col items-center justify-center text-center p-4 rounded-md hover:bg-gray-700 transition-all duration-300'>
-            <MdAddTask className='text-5xl text-white' />
-            <h2 className='bg-gray-400 text-white mt-4 text-2xl p-2 rounded'>Add task</h2>
+          <div className='bg-gray-600 flex flex-col justify-center text-center p-4 hover:scale-105 transition-all duration-100'>
+            <MdAddTask className='text-5xl' />
+            <h2 className='bg-gray-400 text-white mt-4 text-2xl'>Add task</h2>
           </div>
         )}
       </div>
