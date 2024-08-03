@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 const Sidebar = () => {
-  const [isOpen, setIsOpen] = useState(false); // State to manage dropdown visibility
+  const [isOpen, setIsOpen] = useState(false);
 
   const data = [
     {
@@ -13,11 +13,6 @@ const Sidebar = () => {
         { title: "Completed Task", link: '/completedTasks' },
         { title: "Incompleted Tasks", link: '/incompleteTasks' },
       ],
-    },
-    // Other main links without dropdowns
-    {
-      title: "Another Link",
-      link: '/anotherLink',
     },
   ];
 
@@ -38,7 +33,7 @@ const Sidebar = () => {
             >
               {item.title}
               {item.dropdown && (
-                <span className='ml-2 text-xs'>{isOpen ? '▲' : '▼'}</span> // Arrow indicator
+                <span className='ml-2 text-xs'>{isOpen ? '▲' : '▼'}</span> 
               )}
             </Link>
             {item.dropdown && isOpen && (

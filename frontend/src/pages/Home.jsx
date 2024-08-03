@@ -20,7 +20,7 @@ const Home = () => {
     <div className='flex flex-col h-[98vh]'>
       <Navbar onContactClick={handleContactClick} />
       <div className='flex flex-1 gap-4'>
-        <div className='bg-white w-1/6 rounded-xl p-4 flex flex-col justify-between'>
+        <div className='bg-white w-1/6 rounded-xl p-4 flex flex-col justify-between m-2 shadow-lg'>
           <Sidebar />
         </div>
         <div className='bg-gray-800 w-5/6 rounded-xl p-4'>

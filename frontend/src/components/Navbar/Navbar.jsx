@@ -4,16 +4,12 @@ import { FaHome, FaCalendar, FaBell, FaSearch } from 'react-icons/fa';
 
 const Navbar = ({ onContactClick }) => {
   return (
-    <nav className='bg-white p-4 flex justify-between items-center shadow-md rounded-b-lg'>
-      <Link to="/" className='text-blue-500 text-lg font-bold'>Researchify</Link>
-      <div>
-        <Link to="/signup" className='text-gray-800 mx-4 hover:text-blue-500'>Signup/Login</Link>
-        <button onClick={onContactClick} className='text-gray-800 hover:text-blue-500'>
-          Contact Us
-        </button>
-      </div>
-
-      <div className='flex space-x-6'>
+    <nav className='bg-gray-300 p-4 flex justify-between items-center shadow-md rounded-b-lg p-2'>
+      <Link to="/" className='text-blue-500 text-lg font-bold animate-bounce'>
+        Researchify
+      </Link>
+      
+      <div className='flex space-x-6 gap-4'>
         <a href="/" className='text-gray-800 hover:text-purple-500 transition-transform duration-300 transform hover:scale-125'>
           <FaHome className='text-xl' />
         </a>
@@ -26,6 +22,19 @@ const Navbar = ({ onContactClick }) => {
         <a href="/search" className='text-gray-800 hover:text-purple-500 transition-transform duration-300 transform hover:scale-125'>
           <FaSearch className='text-xl' />
         </a>
+      </div>
+      
+      <div className='flex items-center'>
+        <div>
+          <Link to="/signup" className='bg-blue-500 text-white px-4 py-2 rounded-lg shadow-lg hover:bg-blue-700 transition-colors duration-300'>
+            Signup/Login
+          </Link>
+        </div>
+        <div>
+          <button onClick={onContactClick} className='ml-4 bg-blue-500 text-white px-4 py-2 rounded-lg shadow-lg hover:bg-blue-700 transition-colors duration-300'>
+            Contact Us
+          </button>
+        </div>
       </div>
     </nav>
   );
