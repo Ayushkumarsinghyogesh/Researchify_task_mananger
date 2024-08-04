@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
+
 
 const Signup = () => {
   const [formData, setFormData] = useState({
@@ -25,10 +26,10 @@ const Signup = () => {
 
   return (
     <div className="w-full max-w-md mx-auto mt-10 p-4 bg-gray-800 rounded shadow-md">
-      <h2 className="text-2xl font-semibold mb-4">Sign Up</h2>
+      <h2 className="text-2xl font-semibold mb-4 text-white">Sign Up</h2>
       <form onSubmit={handleSubmit}>
         <div className="mb-4">
-          <label htmlFor="username" className="block text-sm font-medium">Username</label>
+          <label htmlFor="username" className="block text-sm font-medium text-white">Username</label>
           <input
             type="text"
             id="username"
@@ -41,7 +42,7 @@ const Signup = () => {
           />
         </div>
         <div className="mb-4">
-          <label htmlFor="email" className="block text-sm font-medium">Email</label>
+          <label htmlFor="email" className="block text-sm font-medium text-white">Email</label>
           <input
             type="email"
             id="email"
@@ -54,7 +55,7 @@ const Signup = () => {
           />
         </div>
         <div className="mb-4">
-          <label htmlFor="password" className="block text-sm font-medium">Password</label>
+          <label htmlFor="password" className="block text-sm font-medium text-white">Password</label>
           <input
             type="password"
             id="password"
@@ -73,6 +74,12 @@ const Signup = () => {
           Sign Up
         </button>
       </form>
+      <p className="mt-4 text-center text-white">
+        Already have an account?{' '}
+        <Link to="/login" className="text-blue-400 hover:underline">
+          Login
+        </Link>
+      </p>
     </div>
   );
 };
